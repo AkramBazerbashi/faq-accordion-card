@@ -5,36 +5,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Kumbh+Sans">
   
   <title>Frontend Mentor | FAQ Accordion Card</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    #colors{
+      color: hsl(238, 29%, 16%);
+      color: hsl(14, 88%, 65%);
+      color: hsl(273, 75%, 66%);
+      color: hsl(240, 73%, 65%);
+      color: hsl(237, 12%, 33%);
+      color: hsl(240, 6%, 50%);
+      color: hsl(240, 5%, 91%);
+    }
+    *{
+      box-sizing: border-box;
+      font-family: "Kumbh Sans";
+      font-size: 12px;
+    }
+    body{
+      background-image: linear-gradient(180deg, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    }
+    #container{
+      margin: 15vh auto;
+      border-radius: 10px;
+      width: 60%;
+      height: 70vh;
+      background-color: white;
+      padding: 50px;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0px 5px 35px -3px black;
+    }
+    #left{
+      width: 60%;
+    }
+    #right{
+      width: 40%;
+    }
+    .QA{
+      width: 90%;
+    }
+    .up{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .up p{
+      color: hsl(237, 12%, 33%);
+    }
+    .up p:hover{
+      color: hsl(14, 88%, 65%);
+      cursor: pointer;
+    }
+    .down p{
+      color: hsl(240, 6%, 50%);
+    }
+    #down1{
+      display: none;
+    }
+    h1{
+      font-size: 20px;
+    }
+    hr{
+      color: hsl(240, 5%, 91%);
+    }
+    #down2{
+      display: none;
+    }
+    #down3{
+      display: none;
+    }
+    #down4{
+      display: none;
+    }
+    #down5{
+      display: none;
+    }
+    #img1{
+      position: relative;
+      left: -140px;
+      z-index: 2;
+    }
+    #img2{
+      position: absolute;
+      left: 185px;
+      top: 280px;
+      z-index: 3;
+    }
+    #img3{
+      position: relative;
+      top: -700px;
+      left: -630px;
+    }
+    @media (max-width: 375px) {
+      #container{
+        margin: 10vh auto;
+        width: 90%;
+        height: 80vh;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+      }
+      #left{
+        width: 100%;
+      }
+      #right{
+        width: 100%;
+      }
+      .QA{
+        width: 90%;
+      }
+      #img1{
+        position: absolute;
+        left: 120px;
+        top: 3px;
+        z-index: 2;
+      }
+      #img2{
+        display: none;
+        position: absolute;
+        left: 85px;
+        top: 80px;
+        z-index: 3;
+      }
+      #img3{
+        display: none;
+        position: relative;
+        top: -200px;
+        left: -30px;
+      }
+      h1{
+        margin: 30px auto;
+        margin-left: 105px;
+      }
+    }
   </style>
 </head>
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
-
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div id="container">
+    <div id="left">
+      <img srcset= "images/illustration-woman-online-desktop.svg 1440w,
+                    images/illustration-woman-online-mobile.svg 375w"
+            sizes="(max-width: 375px) 375px, 1440px"
+            src="images/illustration-woman-online-desktop.svg"
+            id="img1">
+      <img src="images/illustration-box-desktop.svg" id="img2">
+      <img srcset= "images/bg-pattern-desktop.svg 1440w,
+                    images/bg-pattern-mobile.svg 375w"
+            sizes="(max-width: 375px) 375px, 1440px"
+            src="images/bg-pattern-desktop.svg"
+            id="img3">
+    </div>
+    <div id="right">
+      <h1>FAQ</h1>
+      <div class= "QA" id="one">
+        <div class="up">
+          <p id="par1">How many team members can I invite?</p>
+          <img id="arrow1" src="images/icon-arrow-down.svg">
+        </div>
+        <div id="down1" class="down">
+          <p>You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.</p>
+        </div>
+        <hr>
+      </div>
+      <div class= "QA" id="two">
+        <div class="up">
+          <p id="par2">What is the maximum file upload size?</p>
+          <img id="arrow2" src="images/icon-arrow-down.svg">
+        </div>
+        <div id="down2" class="down">
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+        <hr>
+      </div>
+      <div class= "QA" id="three">
+        <div class="up">
+          <p id="par3">How do I reset my password?</p>
+          <img id="arrow3" src="images/icon-arrow-down.svg">
+        </div>
+        <div id="down3" class="down">
+          <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>
+        </div>
+        <hr>
+      </div>
+      <div class= "QA" id="four">
+        <div class="up">
+          <p id="par4">Can I cancel my subscription?</p>
+          <img id="arrow4" src="images/icon-arrow-down.svg">
+        </div>
+        <div id="down4" class="down">
+          <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+        <hr>
+      </div>
+      <div class= "QA" id="five">
+        <div class="up">
+          <p id="par5">Do you provide additional support?</p>
+          <img id="arrow5" src="images/icon-arrow-down.svg">
+        </div>
+        <div id="down5" class="down">
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+        <hr>
+      </div>
+    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
